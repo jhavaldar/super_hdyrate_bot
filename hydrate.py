@@ -8,8 +8,8 @@ from bs4 import BeautifulSoup
 import pytz
 
 frequency = 30
-start = "17:00"
-end = "17:30"
+start = "17:30"
+end = "18:30"
 
 # Get auth object
 def get_auth(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_KEY, ACCESS_SECRET):
