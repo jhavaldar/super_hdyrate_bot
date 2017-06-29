@@ -5,9 +5,9 @@ import tweepy, time, sys, csv, math, requests, random, os
 from datetime import timedelta, datetime
 from bs4 import BeautifulSoup
 
-frequency = 8
-start = "16:55"
-end = "23:00"
+frequency = 3
+start = "16:56"
+end = "16:59"
 
 # Get auth object
 def get_auth(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_KEY, ACCESS_SECRET):
