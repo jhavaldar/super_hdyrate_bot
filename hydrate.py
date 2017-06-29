@@ -5,6 +5,7 @@ import tzlocal
 import tweepy, time, sys, csv, math, requests, random, os
 from datetime import timedelta, datetime
 from bs4 import BeautifulSoup
+import pytz
 
 frequency = 30
 start = "17:00"
@@ -71,9 +72,6 @@ def get_tweet():
   interjection = get_interjection()
   tweet_text = interjection+"! You should probably drink a glass of water."
   return tweet_text
-
-tz = pytz.timezone('Europe/Paris') # <- put your local timezone here
-now = datetime.now(tz) # the current time in your local timezone
 
 # Run an infinite loop which check the time every minute and occasionally tweets
 def run():
