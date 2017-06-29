@@ -6,7 +6,7 @@ from datetime import timedelta, datetime
 from bs4 import BeautifulSoup
 
 frequency = 8
-start = "09:30"
+start = "16:19"
 end = "23:00"
 
 # Get API keys from file as dictionary
