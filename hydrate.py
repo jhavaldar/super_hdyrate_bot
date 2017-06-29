@@ -6,7 +6,7 @@ from datetime import timedelta, datetime
 from bs4 import BeautifulSoup
 
 frequency = 8
-start = "16:19"
+start = "16:20"
 end = "23:00"
 
 # Get API keys from file as dictionary
@@ -83,6 +83,7 @@ def get_tweet():
 def run():
   while(True):
     now = datetime.now()
+    print now.hour,now.minute
     for interval in intervals:
       if int(now.hour) == int(interval.hour) and (now.minute) == (interval.minute):
         tweet_text = get_tweet()
