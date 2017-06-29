@@ -79,14 +79,15 @@ def run():
     tz = pytz.timezone('America/New_York')
     now = datetime.now(tz)
     for interval in intervals:
-      if int(now.hour) == int(interval.hour) and (now.minute) == (interval.minute):
+      if int(now.hour) == int(interval.hour) and int(now.minute) == int(interval.minute):
         tweet_text = get_tweet()
         api.update_status(tweet_text)
         print ("Tweet posted at " + str(now.hour) + ":" + str(now.minute))
     time.sleep(60)  #Update every minute
 
 # Get the intervals in which to tweet
-intervals = get_intervals(start, end, frequency)
+#intervals = get_intervals(start, end, frequency)
+#print intervals
 
 # Get the various API keys
 CONSUMER_KEY = os.environ['CONSUMER_KEY']
