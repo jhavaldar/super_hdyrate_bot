@@ -6,17 +6,8 @@ from datetime import timedelta, datetime
 from bs4 import BeautifulSoup
 
 frequency = 8
-start = "16:20"
+start = "16:26"
 end = "23:00"
-
-# Get API keys from file as dictionary
-def get_keys(filepath="keys.csv"):
-  keys = {}
-  with open(filepath, 'rb') as csvfile:
-    reader = csv.reader(csvfile, delimiter=',', quotechar='|')
-    for row in reader:
-      keys[row[0]] = row[1]
-  return keys
 
 # Get auth object
 def get_auth(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_KEY, ACCESS_SECRET):
@@ -94,11 +85,11 @@ def run():
 intervals = get_intervals(start, end, frequency)
 
 # Get the various API keys
-keys = get_keys()
-CONSUMER_KEY = keys['CONSUMER_KEY']
-CONSUMER_SECRET = keys['CONSUMER_SECRET']
-ACCESS_KEY = keys['ACCESS_KEY']
-ACCESS_SECRET = keys['ACCESS_SECRET']
+CONSUMER_KEY = os.environ['CONSUMER_KEY']
+CONSUMER_SECRET =  os.environ['CONSUMER_SECRET']
+ACCESS_KEY = os.environ['ACCESS_KEY']
+ACCESS_SECRET = os.environ['ACCESS_SECRET']
+# Get the API
 auth = get_auth(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_KEY, ACCESS_SECRET)
 api = get_api(auth)
 run()
