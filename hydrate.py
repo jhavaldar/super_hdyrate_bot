@@ -61,7 +61,7 @@ def populate_interjections(outpath="interjections.csv"):
 # Get random interjection from list of interjections in an outside file
 def get_interjection(inpath="interjections.csv"):
   list = []
-  with open(inpath, 'rb') as csvfile:
+  with open(inpath, 'r') as csvfile:
     list =  csvfile.read().split(",")
   max = len(list)
   index = random.randint(0, max)
@@ -75,8 +75,6 @@ def get_tweet():
 
 # Run an infinite loop which check the time every minute and occasionally tweets
 def run():
-  for interval in intervals:
-    print (str(interval.hour)+":"+str(interval.minute))
   while(True):
     tz = pytz.timezone('America/New_York')
     now = datetime.now(tz)
