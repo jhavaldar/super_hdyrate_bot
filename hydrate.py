@@ -75,7 +75,8 @@ def run():
   while(True):
     api.update_status("Yo")
     now = datetime.now()
-    print now.hour,now.minute
+    print now.hour
+    print now.minute
     for interval in intervals:
       if int(now.hour) == int(interval.hour) and (now.minute) == (interval.minute):
         tweet_text = get_tweet()
