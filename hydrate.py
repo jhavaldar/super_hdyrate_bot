@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 import pytz
 
 frequency = 8
-start = "09:30"
+start = "09:35"
 end = "23:00"
 
 # Get auth object
@@ -86,7 +86,7 @@ def run():
     time.sleep(60)  #Update every minute
 
 # Get the intervals in which to tweet
-#intervals = get_intervals(start, end, frequency)
+intervals = get_intervals(start, end, frequency)
 #print intervals
 
 # Get the various API keys
