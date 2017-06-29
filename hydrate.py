@@ -6,7 +6,7 @@ from datetime import timedelta, datetime
 from bs4 import BeautifulSoup
 
 frequency = 8
-start = "16:34"
+start = "16:40"
 end = "23:00"
 
 # Get auth object
