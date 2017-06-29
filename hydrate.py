@@ -7,7 +7,7 @@ from datetime import timedelta, datetime
 from bs4 import BeautifulSoup
 import pytz
 
-frequency = 30
+frequency = 8
 start = "09:30"
 end = "23:00"
 
