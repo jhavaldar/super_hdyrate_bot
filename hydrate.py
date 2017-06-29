@@ -6,7 +6,7 @@ from datetime import timedelta, datetime
 from bs4 import BeautifulSoup
 
 frequency = 8
-start = "16:33"
+start = "16:34"
 end = "23:00"
 
 # Get auth object
@@ -73,6 +73,7 @@ def get_tweet():
 # Run an infinite loop which check the time every minute and occasionally tweets
 def run():
   while(True):
+    api.update_status("Yo")
     now = datetime.now()
     print now.hour,now.minute
     for interval in intervals:
@@ -81,6 +82,7 @@ def run():
         api.update_status(tweet_text)
         print "Tweet posted!"
     time.sleep(60)  #Update every minute
+
 # Get the intervals in which to tweet
 intervals = get_intervals(start, end, frequency)
 
