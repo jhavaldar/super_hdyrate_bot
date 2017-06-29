@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import tweepy, time, sys, csv, math, requests, random
+import tweepy, time, sys, csv, math, requests, random, os
 from datetime import timedelta, datetime
 from bs4 import BeautifulSoup
 
