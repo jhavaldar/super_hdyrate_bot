@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import tzlocal
 import tweepy, time, sys, csv, math, requests, random, os
 from datetime import timedelta, datetime
 from bs4 import BeautifulSoup
@@ -25,7 +26,8 @@ def get_intervals(start, end, frequency):
   start_hrs, start_mins = int(start[0:2]), int(start[3:])
   end_hrs, end_mins = int(end[0:2]), int(end[3:])
 
-  now = datetime.now()
+  tz = pytz.timezone('America/New_York')
+  now = datetime.now(tz)
 
   d1 = datetime(now.year, now.month, now.day, start_hrs, start_mins)
   d2 = datetime(now.year, now.month, now.day, end_hrs, end_mins)
@@ -70,12 +72,16 @@ def get_tweet():
   tweet_text = interjection+"! You should probably drink a glass of water."
   return tweet_text
 
+tz = pytz.timezone('Europe/Paris') # <- put your local timezone here
+now = datetime.now(tz) # the current time in your local timezone
+
 # Run an infinite loop which check the time every minute and occasionally tweets
 def run():
   for interval in intervals:
     print (str(interval.hour)+":"+str(interval.minute))
   while(True):
-    now = datetime.now()
+    tz = pytz.timezone('America/New_York')
+    now = datetime.now(tz)
     print (str(now.hour)+":"+str(now.minute))
     for interval in intervals:
       if int(now.hour) == int(interval.hour) and (now.minute) == (interval.minute):
