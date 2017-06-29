@@ -1,1 +1,1 @@
-web: python hydrate.py
+worker: python hydrate.py
