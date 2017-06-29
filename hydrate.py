@@ -87,7 +87,7 @@ def run():
 
 # Get the intervals in which to tweet
 intervals = get_intervals(start, end, frequency)
-print intervals
+print (intervals)
 
 # Get the various API keys
 CONSUMER_KEY = os.environ['CONSUMER_KEY']
