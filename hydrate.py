@@ -72,6 +72,8 @@ def get_tweet():
 
 # Run an infinite loop which check the time every minute and occasionally tweets
 def run():
+  for interval in intervals:
+    print (str(interval.hour)+":"+str(interval.minute))
   while(True):
     now = datetime.now()
     #api.update_status("Yo")
@@ -80,7 +82,7 @@ def run():
         tweet_text = get_tweet()
         api.update_status(tweet_text)
         print ("Tweet posted!")
-    time.sleep(60)  #Update every minute
+    time.sleep(30)  #Update every minute
 
 # Get the intervals in which to tweet
 intervals = get_intervals(start, end, frequency)
